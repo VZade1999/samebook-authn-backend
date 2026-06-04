@@ -1,0 +1,23 @@
+import type { Sequelize } from 'sequelize';
+import { users as _users } from './users';
+import type { usersAttributes } from './users';
+import { roles as _roles } from './roles';
+import type { rolesAttributes } from './roles';
+import { user_roles as _user_roles } from './user.roles';
+import type { user_rolesAttributes } from './user.roles';
+import { permissions as _permissions } from './permissions';
+import type { permissionsAttributes } from './permissions';
+import { role_permissions as _role_permissions } from './role.permissions';
+import type { role_permissionsAttributes } from './role.permissions';
+import { companies as _companies } from './companies';
+import type { companiesAttributes } from './companies';
+export { _users as users, _roles as roles, _user_roles as user_roles, _permissions as permissions, _role_permissions as role_permissions, _companies as companies, };
+export type { usersAttributes, rolesAttributes, user_rolesAttributes, permissionsAttributes, role_permissionsAttributes, companiesAttributes, };
+export declare function initModels(sequelize: Sequelize): {
+    users: typeof _users;
+    roles: typeof _roles;
+    user_roles: typeof _user_roles;
+    role_permissions: typeof _role_permissions;
+    permission: typeof _permissions;
+    companies: typeof _companies;
+};
