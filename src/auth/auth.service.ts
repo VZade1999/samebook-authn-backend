@@ -4,16 +4,16 @@ import {
   UnauthorizedException,
   Logger,
 } from '@nestjs/common';
-import { users } from 'src/models/users';
-import { user_roles } from 'src/models/user.roles';
-import { role_permissions } from 'src/models/role.permissions';
-import { permissions } from 'src/models/permissions';
-import { roles } from 'src/models/roles';
+import { users } from '../models/users';
+import { user_roles } from '../models/user.roles';
+import { role_permissions } from '../models/role.permissions';
+import { permissions } from '../models/permissions';
+import { roles } from '../models/roles';
 
 import * as bcrypt from 'bcrypt';
 import { use } from 'passport';
-import { AppLogger } from 'src/common/logger/logger.service';
-import { companies } from 'src/models/companies';
+import { AppLogger } from '../common/logger/logger.service';
+import { companies } from '../models/companies';
 
 import {generateAccessToken, generateRefreshToken} from '../Utils/jwt.util';
 

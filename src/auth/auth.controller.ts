@@ -12,9 +12,9 @@ import {
 import { Request, Response } from 'express';
 import { AuthService } from './auth.service';
 import { AuthDto } from './dto/auth.dto';
-import { successRes, failedRes, errorRes } from 'src/Utils/response.util';
+import { successRes, failedRes, errorRes } from '../Utils/response.util';
 import { RegisterDto } from './dto/register.dto';
-import { AppLogger } from 'src/common/logger/logger.service';
+import { AppLogger } from '../common/logger/logger.service';
 
 const USER_SAFE_MESSAGES: Record<string, string> = {
   DATABASE_ERROR: 'Service temporarily unavailable. Please try again.',
