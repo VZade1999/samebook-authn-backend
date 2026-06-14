@@ -53,7 +53,13 @@ export class AuthService {
           {
             model: this.Companies,
             as: 'company',
-            attributes: ['id', 'name', 'email', 'phone', 'address'],
+            attributes: [
+              'id',
+              'name',
+              'primary_email',
+              'primary_phone',
+              'default_terms_conditions',
+            ],
           },
         ],
       });
@@ -171,6 +177,7 @@ export class AuthService {
                 phone: user.company.phone,
                 address: user.company.address,
                 logo: user.company.logo,
+                default_terms_conditions: user.company.default_terms_conditions,
                 is_active: user.company.is_active,
               }
             : null,
