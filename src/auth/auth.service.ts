@@ -14,10 +14,8 @@ import * as bcrypt from 'bcrypt';
 import { use } from 'passport';
 import { AppLogger } from 'src/common/logger/logger.service';
 import { companies } from 'src/models/companies';
-const {
-  generateAccessToken,
-  generateRefreshToken,
-} = require('../utils/jwt.util');
+
+import {generateAccessToken, generateRefreshToken} from '../Utils/jwt.util';
 
 @Injectable()
 export class AuthService {
