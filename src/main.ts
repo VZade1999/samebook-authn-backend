@@ -2,9 +2,9 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ConstantsService } from './Utils/constants.service';
 import helmet from 'helmet';
-import * as  cors from 'cors';
+import  cors from 'cors';
 import { Logger } from '@nestjs/common';
-import * as cookieParser from 'cookie-parser';
+import  cookieParser from 'cookie-parser';
 
 const PORT = process.env.PORT || 3030;
 
