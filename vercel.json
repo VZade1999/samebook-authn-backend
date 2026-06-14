@@ -1,7 +1,10 @@
 {
   "functions": {
     "dist/main.js": {
-      "includeFiles": "node_modules/mysql2/**"
+      "includeFiles": [
+        "node_modules/mysql2/**",
+        "node_modules/mysql2/dist/**"
+      ]
     }
   }
 }
