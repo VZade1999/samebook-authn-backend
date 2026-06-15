@@ -59,6 +59,7 @@ export class AuthService {
               'primary_email',
               'primary_phone',
               'default_terms_conditions',
+              'logo',
             ],
           },
         ],

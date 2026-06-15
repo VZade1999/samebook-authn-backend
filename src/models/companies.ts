@@ -14,6 +14,7 @@ export interface companiesAttributes {
   primary_phone?: string;
   status?: string;
   default_terms_conditions?: string;
+  logo?: Buffer;
   is_active?: number;
   created_at?: Date;
   updated_at?: Date;
@@ -21,7 +22,6 @@ export interface companiesAttributes {
 
 export type companiesPk = 'id';
 export type companiesId = companies[companiesPk];
-
 export type companiesOptionalAttributes =
   | 'id'
   | 'company_prefix'
@@ -34,10 +34,10 @@ export type companiesOptionalAttributes =
   | 'primary_phone'
   | 'status'
   | 'default_terms_conditions'
+  | 'logo'
   | 'is_active'
   | 'created_at'
   | 'updated_at';
-
 export type companiesCreationAttributes = Optional<
   companiesAttributes,
   companiesOptionalAttributes
@@ -59,6 +59,7 @@ export class companies
   primary_phone?: string;
   status?: string;
   default_terms_conditions?: string;
+  logo?: Buffer;
   is_active?: number;
   created_at?: Date;
   updated_at?: Date;
@@ -72,12 +73,10 @@ export class companies
           allowNull: false,
           primaryKey: true,
         },
-
         name: {
           type: DataTypes.STRING(255),
           allowNull: false,
         },
-
         company_prefix: {
           type: DataTypes.STRING(10),
           allowNull: false,
@@ -88,65 +87,57 @@ export class companies
             is: /^[A-Z0-9]+$/,
           },
         },
-
         legal_name: {
           type: DataTypes.STRING(255),
           allowNull: true,
         },
-
         registration_number: {
           type: DataTypes.STRING(150),
           allowNull: true,
         },
-
         tax_id: {
           type: DataTypes.STRING(150),
           allowNull: true,
         },
-
         website: {
           type: DataTypes.STRING(255),
           allowNull: true,
         },
-
         industry: {
           type: DataTypes.STRING(150),
           allowNull: true,
         },
-
         primary_email: {
           type: DataTypes.STRING(255),
           allowNull: true,
         },
-
         primary_phone: {
           type: DataTypes.STRING(50),
           allowNull: true,
         },
-
         status: {
           type: DataTypes.STRING(50),
           allowNull: true,
           defaultValue: 'active',
         },
-
         default_terms_conditions: {
           type: DataTypes.TEXT,
           allowNull: true,
         },
-
+        logo: {
+          type: DataTypes.BLOB('medium'),
+          allowNull: true,
+        },
         is_active: {
           type: DataTypes.TINYINT,
           allowNull: true,
           defaultValue: 1,
         },
-
         created_at: {
           type: DataTypes.DATE,
           allowNull: true,
           defaultValue: Sequelize.Sequelize.literal('CURRENT_TIMESTAMP'),
         },
-
         updated_at: {
           type: DataTypes.DATE,
           allowNull: true,
@@ -158,7 +149,6 @@ export class companies
         tableName: 'companies',
         underscored: true,
         timestamps: false,
-
         indexes: [
           {
             name: 'PRIMARY',
