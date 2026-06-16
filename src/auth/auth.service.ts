@@ -15,7 +15,7 @@ import { use } from 'passport';
 import { AppLogger } from '../common/logger/logger.service';
 import { companies } from '../models/companies';
 
-import {generateAccessToken, generateRefreshToken} from '../Utils/jwt.util';
+import { generateAccessToken, generateRefreshToken } from '../Utils/jwt.util';
 
 @Injectable()
 export class AuthService {
@@ -137,6 +137,8 @@ export class AuthService {
       userId: user.id,
       companyId: user.company_id,
       email: user.email,
+      roles: roleNames,
+      permissions: permissionNames,
     };
     let accessToken: string;
     let refreshToken: string;
