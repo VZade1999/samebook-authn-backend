@@ -19,9 +19,9 @@ export class ConstantsService {
     PROD: 'prod',
   };
 
-  static readonly CORS = {
-    ALLOWED_HEADERS: 'authorization,content-type',
-    EXPOSED_HEADERS: 'token',
-    METHODS: 'GET,POST,OPTIONS,PUT',
-  };
+ static readonly CORS = {
+  ALLOWED_HEADERS: ['Content-Type', 'Authorization'],
+  EXPOSED_HEADERS: ['token'],          // ✅ array is safer than a plain string
+  METHODS: ['GET', 'POST', 'PUT', 'OPTIONS', 'DELETE'],  // ✅ array form is more reliable
+};
 }
