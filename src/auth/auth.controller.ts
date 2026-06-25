@@ -35,20 +35,15 @@ export class AuthController {
   async healthCheck(
     @Req() req: Request,
     @Res() res: Response,
-    @Body() body: AuthDto,
   ) {
-    const log = this.appLogger.forContext('AuthController', 'login', {
-      email: body.username,
-      ip: req.ip ?? req.socket?.remoteAddress ?? 'unknown',
-    });
 
-    log.info('Request received');
+
+    
     try {
 
-      log.info('Response sent successfully');
+  
       return successRes(res, "Health Check success", {});
     } catch (error) {
-      log.error('Unhandled error in login', error);
       return errorRes(res, error);
     }
   }
