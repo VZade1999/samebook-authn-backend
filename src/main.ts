@@ -17,7 +17,7 @@ async function bootstrap() {
       'http://localhost:5173',        // local dev
       'http://localhost:3000',        // local dev alt
       'https://your-frontend.vercel.app',
-      'https://samebook-frontend-dev-git-main-vzade1999s-projects.vercel.app',
+      'https://samebook-frontend-dev-git-main-vzade1999s-projects.vercel.app/',
       'https://samebook-frontend-7509vwpkg-vzade1999s-projects.vercel.app',  // ✅ your actual frontend URL
     ],
  
